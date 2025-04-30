@@ -3,7 +3,7 @@
 @theme {
   /* CUSTOM BREAKPOINTS */
   --breakpoint-2md: 900px;
-  
+
   --font-primary: 'Outfit';
 
   --color-theme-dark: hsl(216, 10%, 10%);
@@ -52,6 +52,10 @@ html {
 
 button {
   cursor: pointer;
+}
+
+img {
+  objet-fit: cover;
 }
 
 @utility mask-fade-bottom {

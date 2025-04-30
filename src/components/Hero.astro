@@ -1,0 +1,128 @@
+---
+import Button from './Button.astro'
+import Container from './Container.astro'
+import Sun from '../assets/sun.svg'
+---
+
+<section id='hero'>
+  <Container className='overflow-hidden py-16'>
+    <div class='relative mx-auto max-w-[880px] text-center'>
+      <h1 class='mb-4 text-[clamp(2rem,10vw,4rem)] font-bold leading-none'>
+        Efficient <span class='bg-theme-light-green rounded-full px-4 py-2'>Scrap</span
+        > Recycling Services Near You
+      </h1>
+
+      <p class='mx-auto mb-12 max-w-[800px] leading-normal'>
+        Discover efficient scrap recycling services right in your neighborhood! We're dedicated to
+        providing convenient and reliable scrap recycling solutions to businesses and individuals
+        alike. Whether you have metal, paper, plastic, or electronics to recycle, our experienced
+        team is here to help.
+      </p>
+
+      <div class='group flex items-center justify-center'>
+        <Button text='Get Started' style='outline' className='max-h-[52px] pr-8' />
+        <div
+          class='bg-theme-dark-green -ml-4 flex aspect-square w-[52px] shrink-0 items-center justify-center rounded-full text-white transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1'
+        >
+          <svg
+            width='32'
+            height='32'
+            viewBox='0 0 32 32'
+            fill='none'
+            xmlns='http://www.w3.org/2000/svg'
+          >
+            <path
+              d='M20.2112 19.7051L22.2478 12.1043L14.647 10.0677'
+              stroke='currentColor'
+              stroke-width='1.6'
+              stroke-miterlimit='10'
+              stroke-linecap='round'
+              stroke-linejoin='round'></path>
+            <path
+              d='M8.75222 19.896L22.1128 12.1822'
+              stroke='currentColor'
+              stroke-width='1.6'
+              stroke-miterlimit='10'
+              stroke-linecap='round'
+              stroke-linejoin='round'></path>
+          </svg>
+        </div>
+      </div>
+
+      <!-- images absolutas -->
+      <img
+        class='absolute -bottom-10 left-0 -translate-x-[60%]'
+        src='/hero/hero-img-left.webp'
+        alt=''
+      />
+      <img
+        class='right absolute -bottom-10 left-auto right-0 translate-x-[60%]'
+        src='/hero/hero-img-right.webp'
+        alt=''
+      />
+      <img
+        aria-hidden='true'
+        class='pointer-events-none absolute -bottom-10 left-auto right-0 w-[100px] -translate-x-full translate-y-[30%] md:w-auto'
+        src='/hero/line.svg'
+        alt=''
+      />
+    </div>
+
+    <div class='mt-12 flex items-center justify-center gap-4'>
+      <img src='/hero/photos/img1.webp' alt='' />
+      <img src='/hero/photos/img2.webp' alt='' />
+      <img src='/hero/photos/img3.webp' alt='' />
+      <img src='/hero/photos/img4.webp' alt='' />
+      <img src='/hero/photos/img5.webp' alt='' />
+    </div>
+  </Container>
+
+  <section class='bg-theme-dark-green overflow-hidden text-nowrap py-2 text-white' id='sliderHero'>
+    <div
+      class='inline-flex items-center justify-start [&>span]:inline-block [&>svg]:mx-6'
+      id='sliderHeroContent'
+    >
+      <Sun />
+      <span>Eco-friendly the planet</span>
+      <Sun />
+      <span>Conserve the planet</span>
+      <Sun />
+      <span>Save the planet</span>
+      <Sun />
+      <span>Environmentally-friendly the planet</span>
+      <Sun />
+      <span>Green the planet</span>
+      <Sun />
+      <span>Eco-friendly the planet</span>
+      <Sun />
+      <span>Conserve the planet</span>
+    </div>
+  </section>
+  <br />
+  <br />
+</section>
+
+<style>
+  #sliderHeroContent.scrolling {
+    animation: scrolling 20s linear infinite;
+  }
+
+  @keyframes scrolling {
+    to {
+      transform: translateX(-100%);
+    }
+  }
+</style>
+
+<script>
+  import { $ } from '../lib/dom-selector'
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // INFINITE SLIDER
+    const slider = $('#sliderHero') as HTMLElement
+    const sliderTrack = $('#sliderHeroContent') as HTMLElement
+    sliderTrack.classList.add('scrolling')
+    const cloneTrack = sliderTrack.cloneNode(true)
+    slider.appendChild(cloneTrack)
+  })
+</script>
