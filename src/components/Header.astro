@@ -1,3 +1,187 @@
-<header id="header">
-  
+---
+import Container from './Container.astro'
+import Logo from '../assets/logo.svg'
+---
+
+<header id='header'>
+  <Container className='h-(--header-height) relative z-10 flex items-center justify-between'>
+    <div class='logo'>
+      <Logo />
+    </div>
+
+    <div class='ml-auto flex items-center justify-center gap-20'>
+      <nav
+        id='navMain'
+        class='bg-theme-light-brown pt-(--header-height) shadow-theme-dark/20 2md:translate-y-0 2md:opacity-100 2md:shadow-none 2md:static 2md:z-auto 2md:bg-transparent 2md:visible 2md:p-0 invisible absolute inset-x-0 top-0 -z-10 -translate-y-full pb-8 opacity-0 shadow-[0_10px_40px]'
+      >
+        <ul
+          class='2md:flex-row flex flex-col items-center justify-center gap-2 [&_a]:inline-block [&_a]:leading-tight [&_a]:px-3 [&_a]:py-2 [&_a]:font-semibold'
+        >
+          <li>
+            <a href='#'>Industries</a>
+          </li>
+          <li>
+            <a href='#'>About</a>
+          </li>
+          <li>
+            <a href='#'>Success Stories</a>
+          </li>
+          <li>
+            <a href='#'>Resources</a>
+          </li>
+          <li>
+            <a href='#'>Solutions</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class='header__actions u-center'>
+        <button class='btn-main'> Sign Up </button>
+      </div>
+    </div>
+
+    <!-- ICON FOR MOBILE -->
+    <button id='menuBtn' class='icon-menu'>
+      <div class='bar bar--1'></div>
+      <div class='bar bar--2'></div>
+      <div class='bar bar--3'></div>
+    </button>
+  </Container>
 </header>
+
+<style>
+  #navMain {
+    transition:
+      opacity 200ms 100ms,
+      translate 300ms,
+      visibility 0s 300ms;
+  }
+
+  #navMain.open {
+    transition:
+      opacity 200ms,
+      translate 300ms 100ms,
+      visibility 0s 0s;
+    translate: 0 0;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* ICON MENU */
+  .icon-menu {
+    --gap: 5px;
+    --height-bar: 2.5px;
+    --pos-y-bar-one: 0;
+    --pos-y-bar-three: 0;
+    --scale-bar: 1;
+    --rotate-bar-one: 0;
+    --rotate-bar-three: 0;
+    width: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    cursor: pointer;
+    position: relative;
+    margin-left: 1rem;
+  }
+
+  @media screen and (width > 900px) {
+    .icon-menu {
+      display: none;
+    }
+  }
+
+  .bar {
+    position: relative;
+    height: var(--height-bar);
+    width: 100%;
+    border-radius: 0.5rem;
+    background-color: currentColor;
+  }
+
+  .bar--1 {
+    top: var(--pos-y-bar-one);
+    transform: rotate(var(--rotate-bar-one));
+    transition:
+      top 200ms 100ms,
+      transform 100ms;
+  }
+
+  .bar--2 {
+    transform: scaleX(var(--scale-bar));
+    transition: transform 150ms 100ms;
+  }
+
+  .bar--3 {
+    bottom: var(--pos-y-bar-three);
+    transform: rotate(var(--rotate-bar-three));
+    transition:
+      bottom 200ms 100ms,
+      transform 100ms;
+  }
+
+  .icon-menu[aria-expanded='true'] > .bar--1 {
+    transition:
+      top 200ms,
+      transform 200ms 100ms;
+  }
+
+  .icon-menu[aria-expanded='true'] > .bar--3 {
+    transition:
+      bottom 200ms,
+      transform 200ms 100ms;
+  }
+
+  .icon-menu[aria-expanded='true'] {
+    --pos-y-bar-one: calc(var(--gap) + var(--height-bar));
+    --pos-y-bar-three: calc(var(--gap) + var(--height-bar));
+    --scale-bar: 0;
+    --rotate-bar-one: 45deg;
+    --rotate-bar-three: -45deg;
+  }
+</style>
+
+<script>
+  import { $ } from '../lib/dom-selector'
+
+  const menuBtn = $('#menuBtn') as HTMLButtonElement
+  const nav = $('#navMain') as HTMLElement
+  const header = $('#header') as HTMLElement
+  const body = document.body
+
+  menuBtn?.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open')
+    menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false')
+  })
+
+  // Optional but recommended for good UX
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const isOpen = nav?.classList.contains('open')
+      if (isOpen) {
+        nav.classList.remove('open')
+        menuBtn.setAttribute('aria-expanded', 'false')
+        body.classList.remove('overflow-hidden')
+      }
+    }
+  })
+
+  document.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement
+    const isClickInsideMenu = header.contains(target)
+    const isClickOnBtn = menuBtn.contains(target)
+    const isClickOnLink = nav.contains(target) && target.closest('a')
+
+    if ((!isClickInsideMenu && !isClickOnBtn && nav?.classList.contains('open')) || isClickOnLink) {
+      nav.classList.remove('open')
+      menuBtn.setAttribute('aria-expanded', 'false')
+      body.classList.remove('overflow-hidden')
+    }
+  })
+
+  // prevent scroll while menu is open (scroll lock)
+  menuBtn?.addEventListener('click', () => {
+    const isOpen = nav.classList.contains('open')
+    body.classList.toggle('overflow-hidden', isOpen)
+  })
+</script>
