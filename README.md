@@ -1,48 +1,41 @@
-# Astro Starter Kit: Basics
+# ♻️ Eco Scrap – Efficient Scrap Recycling Landing Page
 
-```sh
-pnpm create astro@latest -- --template basics
-```
+**Eco Scrap** is a responsive landing page built with [Astro](https://astro.build), designed to promote efficient and reliable scrap recycling services. The project serves as a front-end practice focused on layout, semantic HTML, accessibility, and component-based development using modern web technologies.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+![Eco Scrap Preview](./public/og.jpg)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🔧 Tech Stack
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+- **Astro**
+- **Tailwind CSS**
+- **Responsive Design**
+- **Accessible HTML structure**
+- **SEO-friendly metadata**
 
-## 🚀 Project Structure
+## 📌 Features
 
-Inside of your Astro project, you'll see the following folders and files:
+- Clean and minimalistic hero section
+- Mobile-first responsive layout
+- SEO-optimized meta tags (Open Graph + Twitter)
+- Modular and reusable components
+- Designed with performance and clarity in mind
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## 🚀 Purpose
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+This project is part of a personal initiative to improve front-end layout skills using Astro and Tailwind CSS. It simulates a real-world landing page for a recycling service business.
 
-## 🧞 Commands
 
-All commands are run from the root of the project, from a terminal:
+## 📁 Project Setup
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+```bash
+# Install dependencies
+pnpm install
 
-## 👀 Want to learn more?
+# Start development server
+pnpm run dev
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+# Build for production
+pnpm run build
+
+# Preview production build
+pnpm run preview
