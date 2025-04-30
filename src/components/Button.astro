@@ -2,21 +2,20 @@
 interface Props {
   text: string
   style: 'filled' | 'outline'
+  className?: string
 }
 
-const { text, style }: Props = Astro.props
+const { text, style, className }: Props = Astro.props
 ---
 
 <button
+  class={className}
   class:list={{
-    'rounded-full': true,
-    'font-semibold': true,
+    'rounded-full font-semibold flex items-center justify-center text-nowrap': true,
     'px-6 py-2': true,
-    'text-[#f2f2f2]': style === 'filled',
-    'bg-theme-dark': style === 'filled',
-    'border-theme-dark-grey text-theme-dark border bg-transparent p-6': style === 'outline',
+    'text-[#f2f2f2] bg-theme-dark': style === 'filled',
+    'border-theme-dark-grey text-theme-dark border bg-transparent py-4 px-4': style === 'outline',
   }}
 >
-  <span>{text}</span>
-  <slot />
+  {text}
 </button>
