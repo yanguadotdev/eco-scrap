@@ -1,6 +1,9 @@
 @import 'tailwindcss';
 
 @theme {
+  /* CUSTOM BREAKPOINTS */
+  --breakpoint-2md: 900px;
+  
   --font-primary: 'Outfit';
 
   --color-theme-dark: hsl(216, 10%, 10%);
@@ -8,6 +11,9 @@
   --color-theme-dark-grey: hsl(216, 18%, 34%);
   --color-theme-light-green: hsl(91, 100%, 85%);
   --color-theme-dark-green: hsl(164, 100%, 12%);
+  --color-theme-light-brown: hsl(34, 78%, 91%);
+
+  --header-height: 5rem;
 }
 
 @layer base {
