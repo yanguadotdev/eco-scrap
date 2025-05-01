@@ -51,29 +51,29 @@ import Sun from '../assets/sun.svg'
 
       <!-- images absolutas -->
       <img
-        class='absolute -bottom-10 left-0 -translate-x-[60%]'
+        class='absolute -bottom-10 left-0 -translate-x-[60%] hidden sm:block'
         src='/hero/hero-img-left.webp'
         alt=''
       />
       <img
-        class='right absolute -bottom-10 left-auto right-0 translate-x-[60%]'
+        class='right absolute -bottom-10 left-auto right-0 translate-x-[60%] hidden sm:block'
         src='/hero/hero-img-right.webp'
         alt=''
       />
       <img
         aria-hidden='true'
-        class='pointer-events-none absolute -bottom-10 left-auto right-0 w-[100px] -translate-x-full translate-y-[30%] md:w-auto'
+        class='pointer-events-none absolute -bottom-10 left-auto right-0 w-[100px] -translate-x-full translate-y-[30%] md:w-auto hidden sm:block'
         src='/hero/line.svg'
         alt=''
       />
     </div>
 
     <div class='mt-12 flex items-center justify-center gap-4'>
-      <img src='/hero/photos/img1.webp' alt='' />
+      <img class="hidden sm:block" src='/hero/photos/img1.webp' alt='' />
       <img src='/hero/photos/img2.webp' alt='' />
       <img src='/hero/photos/img3.webp' alt='' />
       <img src='/hero/photos/img4.webp' alt='' />
-      <img src='/hero/photos/img5.webp' alt='' />
+      <img class="hidden sm:block" src='/hero/photos/img5.webp' alt='' />
     </div>
   </Container>
 
@@ -98,8 +98,6 @@ import Sun from '../assets/sun.svg'
       <span>Conserve the planet</span>
     </div>
   </section>
-  <br />
-  <br />
 </section>
 
 <style>
