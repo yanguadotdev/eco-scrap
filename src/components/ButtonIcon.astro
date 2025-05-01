@@ -1,0 +1,28 @@
+---
+interface Props {
+  classname?: string
+}
+
+const { classname } = Astro.props as Props
+---
+
+<div
+  class={`bg-theme-dark-green -ml-4 flex aspect-square w-[52px] shrink-0 items-center justify-center rounded-full text-white transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 ${classname}`}
+>
+  <svg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'>
+    <path
+      d='M20.2112 19.7051L22.2478 12.1043L14.647 10.0677'
+      stroke='currentColor'
+      stroke-width='1.6'
+      stroke-miterlimit='10'
+      stroke-linecap='round'
+      stroke-linejoin='round'></path>
+    <path
+      d='M8.75222 19.896L22.1128 12.1822'
+      stroke='currentColor'
+      stroke-width='1.6'
+      stroke-miterlimit='10'
+      stroke-linecap='round'
+      stroke-linejoin='round'></path>
+  </svg>
+</div>
