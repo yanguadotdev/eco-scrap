@@ -2,6 +2,7 @@
 
 @theme {
   /* CUSTOM BREAKPOINTS */
+  --breakpoint-xs: 30rem;
   --breakpoint-2md: 900px;
 
   --font-primary: 'Outfit';
