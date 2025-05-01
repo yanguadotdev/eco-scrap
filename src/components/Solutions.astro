@@ -1,0 +1,66 @@
+---
+import ButtonIcon from './ButtonIcon.astro'
+import Container from './Container.astro'
+---
+
+<section class='mt-32'>
+  <Container className='flex flex-col justify-start gap-16'>
+    <header class='flex flex-wrap items-center justify-center gap-x-16 gap-y-8'>
+      <h2 class='text-[clamp(1.5rem,6vw,3rem)] font-bold leading-none'>
+        Transforming Scrap into Value
+      </h2>
+      <p class='max-w-[350px] leading-normal'>
+        Discover efficient scrap recycling neighborhood! We're dedicated to providing convenient
+        reliable.
+      </p>
+    </header>
+
+    <div class='flex flex-wrap items-center justify-between gap-6'>
+      <button class='group relative mx-auto w-full max-w-[460px] grow'>
+        <img class='lazy solutions__img' src='/solutions/solutions.png' alt='' />
+        <span
+          class='xs:text-2xl absolute left-0 top-0 flex w-full items-start justify-between text-left text-lg font-semibold leading-none sm:w-[180px] sm:justify-start'
+        >
+          <span>Explore our <br />solutions</span>
+          <ButtonIcon classname='ml-0' />
+        </span>
+      </button>
+
+      <div class='flex shrink grow basis-[400px] flex-col gap-5'>
+        <div class='flex flex-wrap items-center justify-between gap-6'>
+          <img
+            class='border-theme-light-grey/50 mx-auto h-[210px] w-auto shrink-0 grow-0 basis-auto rounded-full border-[12px]'
+            src='/solutions/trash.png'
+            alt=''
+          />
+          <div class='bg-theme-light-grey/50 min-w-[180px] shrink grow basis-0 rounded-2xl p-8'>
+            <h3 class='mb-2 text-[clamp(1rem,4vw,1.5rem)] font-semibold'>How We Make It?</h3>
+            <p class='leading-normal'>
+              UrbanGreen tech’s LED lighting solutions have demonstred energy efficiency gains
+            </p>
+          </div>
+        </div>
+        <div class='flex flex-wrap items-center justify-between gap-6'>
+          <img
+            class='aspect-video h-[150px] shrink grow basis-0 rounded-2xl'
+            src='/solutions/land.png'
+            alt=''
+          />
+          <img
+            class='aspect-video h-[150px] shrink grow basis-0 rounded-2xl'
+            src='/solutions/clean.png'
+            alt=''
+          />
+        </div>
+        <div class='bg-theme-light-grey/50 min-w-0 gap-6 rounded-2xl p-8'>
+          <h3 class='mb-2 text-[clamp(1rem,4vw,1.5rem)] font-semibold'>80% Energy Efficiency</h3>
+
+          <p class='leading-normal'>
+            UrbanGreen tech’s LED lighting solutions have demonstred energy efficiency gains of up
+            to 80% compared to traditional lighting system.
+          </p>
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>
