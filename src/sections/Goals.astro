@@ -1,0 +1,42 @@
+---
+import Container from '../components/Container.astro'
+import Goal from '../components/Goal.astro'
+---
+
+<!-- CLEANNER & GREENER -->
+<section class='mt-24'>
+  <Container className='flex flex-col items-start justify-center gap-16 py-24'>
+    <header>
+      <h2 class='mb-3 text-[clamp(1.5rem,6vw,3rem)] font-bold leading-none'>
+        Make Our World Cleaner & Greener!
+      </h2>
+
+      <p class='max-w-[540px] leading-normal'>
+        Discover efficient scrap recycling services right in your neighborhood! We're dedicated to
+        providing convenient and reliable scrap recycling.
+      </p>
+    </header>
+
+    <section
+      class='no-scrollbar flex w-full cursor-e-resize items-center justify-start gap-6 overflow-hidden overflow-x-auto rounded-2xl'
+    >
+      <Goal
+        title='Protect Our Animal'
+        description='Energy efficiency gains to 80% compared traditional lighting system.'
+        imgSrc='/goals/animals.png'
+      />
+
+      <Goal
+        title='Cleanup Our Planet'
+        description='The earth is our home, and we must take care of it. We can do this by recycling and reusing.'
+        imgSrc='/goals/environment.png'
+      />
+
+      <Goal
+        title='Protect & Cleanup The Environment'
+        description='Our environment is very important therefore is necessary protect.'
+        imgSrc='/goals/protect.png'
+      />
+    </section>
+  </Container>
+</section>

@@ -1,0 +1,30 @@
+---
+import CircleIcon from './CircleIcon.astro'
+
+interface Props {
+  title: string
+  description: string
+  imgSrc: string
+}
+
+const { title, description, imgSrc }: Props = Astro.props
+---
+
+<article
+  class='bg-theme-light-grey/50 even:bg-theme-light-green flex min-w-[460px] items-center justify-center gap-8 rounded-2xl p-6'
+>
+  <div class='make__carrousel-info'>
+    <h3 class='mb-3 text-[clamp(1rem,6vw,1.5rem)] font-semibold leading-tight'>{title}</h3>
+    <p class='make__carrousel-paragraph'>
+      {description}
+    </p>
+
+    <button class='flex items-center justify-center gap-2 mt-6 py-3 px-0 group'>
+      <span>Read more</span>
+
+      <CircleIcon classname='origin-left bg-transparent border-2 border-theme-dark-grey max-w-5 h-5 px-0 ml-0' />
+    </button>
+  </div>
+
+  <img src={imgSrc} alt='' class='make__carrousel-img' />
+</article>
