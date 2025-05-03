@@ -1,0 +1,44 @@
+---
+import Button from './Button.astro'
+import CircleIcon from './CircleIcon.astro'
+import Initiative from './Initiative.astro'
+---
+
+<section class='bg-theme-light-grey/25 mt-24 py-16 text-center'>
+  <h2 class='text-[clamp(1.5rem,6vw,3rem)] font-bold leading-none'>Our Initiatives for 2025</h2>
+
+  <ul class='mt-16 flex flex-col gap-4'>
+    <Initiative
+      title='Tree Planting'
+      description='We offer a comprehensive suite of digital services tailored to meet the diverse needs of our clients.'
+      imgSrc='/initiatives/tree.png'
+      imgAlt='Tree Planting Initiative'
+    />
+
+    <Initiative
+      title='Beach Cleanup'
+      description='We offer to clean up the beach and remove all the trash and debris and restore the natural beauty of the beach.'
+      imgSrc='/initiatives/cleanup.png'
+      imgAlt='Beach Cleanup Initiative'
+    />
+
+    <Initiative
+      title='Education Events'
+      description='We offer education events to raise awareness about the importance of recycling and waste management.'
+      imgSrc='/initiatives/education.png'
+      imgAlt='Education Events Initiative'
+    />
+
+    <Initiative
+      title='Park Cleaning'
+      description='We offer a comprehensive suite of digital services tailored to meet the diverse needs of our clients.'
+      imgSrc='/initiatives/park.png'
+      imgAlt='Park Cleaning Initiative'
+    />
+  </ul>
+
+  <div class='group mx-auto flex w-max items-center justify-center mt-12'>
+    <Button text='View Details' style='outline' className='max-h-[52px] pr-8' />
+    <CircleIcon classname='text-white' />
+  </div>
+</section>

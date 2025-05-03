@@ -4,6 +4,7 @@
   /* CUSTOM BREAKPOINTS */
   --breakpoint-xs: 30rem;
   --breakpoint-2md: 900px;
+  --breakpoint-3md: 60rem;
 
   --font-primary: 'Outfit';
 
@@ -15,6 +16,14 @@
   --color-theme-light-brown: hsl(34, 78%, 91%);
 
   --header-height: 5rem;
+
+  --animate-pulse-expand: pulse-expand 800ms infinite;
+  @keyframes pulse-expand {
+    to {
+      transform: scale(1.8);
+      opacity: 0;
+    }
+  }
 }
 
 @layer base {
@@ -24,11 +33,11 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: transparent;
+    background: var(--color-theme-dark);
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: var(--color-theme-dark);
+    background-color: var(--color-theme-light-brown);
     border-radius: 5px;
     border: 2px solid oklch(67.65% 0.1539 329.18 / 0.4);
   }
@@ -38,7 +47,7 @@
 
   /* Firefox */
   * {
-    scrollbar-color: var(--color-theme-dark) transparent;
+    scrollbar-color: var(--color-theme-light-brown) var(--color-theme-dark);
     scrollbar-width: thin;
   }
 }
@@ -57,7 +66,7 @@ button {
 }
 
 img {
-  objet-fit: cover;
+  object-fit: cover;
 }
 
 @utility mask-fade-bottom {
