@@ -52,6 +52,17 @@
   }
 }
 
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE y Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
 html {
   font-family: 'Outfit', sans-serif;
   -webkit-font-smoothing: antialiased;
