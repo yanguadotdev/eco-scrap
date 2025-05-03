@@ -1,7 +1,7 @@
 ---
-import Button from './Button.astro'
-import CircleIcon from './CircleIcon.astro'
-import Initiative from './Initiative.astro'
+import Button from '../components/Button.astro'
+import CircleIcon from '../components/CircleIcon.astro'
+import Initiative from '../components/Initiative.astro'
 ---
 
 <section class='bg-theme-light-grey/25 mt-24 py-16 text-center'>
@@ -37,7 +37,7 @@ import Initiative from './Initiative.astro'
     />
   </ul>
 
-  <div class='group mx-auto flex w-max items-center justify-center mt-12'>
+  <div class='group mx-auto mt-12 flex w-max items-center justify-center'>
     <Button text='View Details' style='outline' className='max-h-[52px] pr-8' />
     <CircleIcon classname='text-white' />
   </div>
