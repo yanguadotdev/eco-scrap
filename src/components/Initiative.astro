@@ -1,0 +1,40 @@
+---
+import CircleIcon from './CircleIcon.astro'
+import Container from './Container.astro'
+
+interface Props {
+  title: string
+  description: string
+  imgSrc: string
+  imgAlt?: string
+}
+
+const { title, description, imgSrc, imgAlt }: Props = Astro.props
+---
+
+<li
+  class='pointer-coarse:bg-theme-dark-green pointer-coarse:text-theme-light-grey hover:text-theme-light-grey hover:bg-theme-dark-green group py-6 transition-colors duration-300 hover:cursor-pointer'
+>
+  <Container>
+    <div
+      class='relative flex flex-col items-start justify-center gap-x-16 gap-y-4 text-left md:flex-row md:items-center'
+    >
+      <h3 class='text-nowrap text-2xl font-semibold'>{title}</h3>
+      <p class='initiatives__link-paragraph'>
+        {description}
+      </p>
+
+      <img
+        class='3md:mx-12 hidden rotate-0 scale-0 transition-transform duration-300 md:block md:w-20 group-hover:-rotate-12 group-hover:scale-200'
+        src={imgSrc}
+        alt={imgAlt || 'Image of one of our initiatives'}
+      />
+
+      <button class='xs:scale-100 absolute -top-4 right-0 scale-75 md:static'>
+        <CircleIcon
+          classname='ml-0 border bg-transparent border-theme-dark-grey text-theme-dark pointer-coarse:bg-theme-light-green group-hover:bg-theme-light-green group-hover:relative group-hover:before:absolute group-hover:before:inset-0 group-hover:before:bg-inherit group-hover:before:rounded-full group-hover:before:-z-[1] group-hover:before:animate-pulse-expand'
+        />
+      </button>
+    </div>
+  </Container>
+</li>
