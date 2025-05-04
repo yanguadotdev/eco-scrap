@@ -1,0 +1,43 @@
+---
+import Mision from '../assets/mision.svg'
+import Bars from '../assets/bars.svg'
+import Recycle from '../assets/recycle.svg'
+import Container from '../components/Container.astro'
+---
+
+<section class='bg-theme-light-grey/25 mt-24 py-24 pb-48 text-center'>
+  <Container>
+    <h2 class='text-balance text-[clamp(1.5rem,6vw,3rem)] font-bold leading-normal'>
+      Reducing Plastic Waste Through <span class='bg-theme-light-green rounded-full px-4 py-2'
+        >Eco-Friendly</span
+      > Packaging
+    </h2>
+  </Container>
+
+  <section class='mt-12 flex flex-wrap items-center justify-center gap-6'>
+    <article
+      class='h-[360px] max-w-[260px] shrink grow basis-[260px] rounded-2xl bg-[url(/about/plants.png)] bg-cover bg-no-repeat'
+    >
+    </article>
+    <article
+      class='text-theme-light-grey flex h-[360px] max-w-[260px] shrink grow basis-[260px] flex-col items-center justify-end gap-8 rounded-2xl bg-[url(/about/mountain.png)] bg-cover bg-no-repeat p-8'
+    >
+      <span class='max-w-[150px] break-all text-center'> Recycled/renewable/organic fibers. </span>
+
+      <Bars />
+    </article>
+
+    <article
+      class='bg-theme-light-green text-theme-dark-green flex h-[360px] max-w-[260px] shrink grow basis-[260px] flex-col items-start justify-center gap-2 rounded-2xl p-8 text-left text-2xl'
+    >
+      <Mision />
+      <p>Our mission is to make sustainable food packaging solutions accessible to everyone</p>
+    </article>
+
+    <article
+      class='flex h-[360px] max-w-[260px] shrink grow basis-[260px] flex-col items-center justify-center gap-2 rounded-2xl bg-[url(/about/recycle.png)] bg-cover bg-no-repeat p-8 text-left text-2xl'
+    >
+      <Recycle />
+    </article>
+  </section>
+</section>
